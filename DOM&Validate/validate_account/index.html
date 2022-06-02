@@ -1,39 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <script src="./main.js">
-    </script>
+  </head>
+  <body>
+    <script src="./main.js"></script>
     <script>
-        let validAccounts = [
-            "123abc_",
-            "_abc123",
-            "______",
-            "123456",
-            "abcdefg"
-        ];
-        let invalidAccounts = [
-            ".@",
-            "12345",
-            "abcde",
-            "1234_",
-            "abcd_"
-        ]
+      let validAccounts = ["123abc_", "_abc123", "______", "123456", "abcdefg"];
+      let invalidAccounts = [".@", "12345", "abcde", "1234_", "abcd_"];
 
-        // Test valid accounts
-        for (let acc of validAccounts) {
-            console.log(isValidAccount(acc));
-        }
+      // Test valid accounts
+      for (let acc of validAccounts) {
+        console.log(isValidAccount(acc));
+      }
 
-        // Test invalid accounts
-        for (let acc of invalidAccounts) {
-            console.log(isValidAccount(acc)); 
-        }
+      // Test invalid accounts
+      for (let acc of invalidAccounts) {
+        console.log(isValidAccount(acc));
+      }
     </script>
-</body>
+  </body>
 </html>
