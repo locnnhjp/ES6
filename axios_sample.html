@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
+            integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            img {
+                margin: 3px 3px 0 0;
+                width: 23%;
+            }
+        </style>
+        <div class="container">
+            <input type="text" id="keyword" placeholder="enter a search item" />
+            <button id="search-btn">Search Giphy!</button>
+            <button id="remove-btn">Remove Images</button>
+        </div>
+        <div id="content"></div>
+        <script>
+            let searchButton = document.getElementById("search-btn");
+            let removeButton = document.getElementById("remove-btn");
+            let content = document.getElementById("content");
+            searchButton.addEventListener("click", (event) => {
+                let searchKeyword = document.getElementById("keyword").value;
+                let apiEndpoint =
+                    `https://api.giphy.com/v1/gifs/search?api_key=eyxoCpztMiLHP4hmT6E1pT5RWCagj13N&lang=en&q=${searchKeyword}`;
+                console.log(searchKeyword);
+                axios
+                    .get(apiEndpoint)
+                    .then((res) => {
+                        console.log(res.data);
+                        let imgIndex = Math.floor(
+                            Math.random() * res.data.data.length
+                        );
+                        let imgUrl =
+                            res.data.data[imgIndex].images.downsized_medium.url;
+                        console.log(imgUrl);
+                        const img = document.createElement("img");
+                        img.src = imgUrl;
+                        let content = document.getElementById("content");
+                        content.appendChild(img);
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+            });
+
+            removeButton.addEventListener("click", (event) => {
+                while (content.firstChild) {
+                    content.removeChild(content.firstChild);
+                }
+            });
+        </script>
+    </body>
+</html>
