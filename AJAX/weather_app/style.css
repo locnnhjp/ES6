@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #091F43;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    margin-left: 30px;
+}
+
+h1 {
+    color: #FFFFFF;
+}
+
+.search {
+    margin-top: 20px;
+}
+.city-search {
+    outline: none;
+    border: none;
+    background-color: inherit;
+    border-bottom: 2px solid slategray;
+    padding-right: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.submit-btn {
+    border-radius: 5px;
+    border: none;
+    padding: 6px 15px;
+    background-color: #FF1F41;
+    color: white;
+    font-weight: 600;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #f34660;
+}
+
+::placeholder {
+    color: white;
+    opacity: 50%;
+}
+
+.err-area {
+    color: rgb(211, 224, 31);
+}
+.weather {
+    margin-top: 30px;
+}
+
+.weather-card {
+    display: inline-block;
+    width: 200px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+}
+
+.city-name {
+    font-size: 20px;
+    position: relative;
+}
+
+.nation-name {
+    position: relative;
+    left: 5px;
+    top: -10px;
+    font-size: 10px;
+    background-color: #FFA73D;
+    color: white;
+    padding: 1px 5px;
+    border-radius: 7px;
+
+}
+
+.temperature {
+    font-size: 65px;
+    font-weight: 600;
+    position: relative;
+    padding: 0;
+}
+
+.celcius {
+    font-size: 30px;
+    position: relative;
+    top: -30px;
+    font-weight: 400;
+}
+
+.icon {
+    display: inline-block;
+}
+
+.icon img {
+    width: 100px;
+}
+
+.description {
+    font-size: 14px;
+}
